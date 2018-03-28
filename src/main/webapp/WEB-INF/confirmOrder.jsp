@@ -18,10 +18,8 @@
     </head>
     
     <body>
-           <p>your length ${length}</p>
-        <p>your Width ${width}</p>
-        <p>your Height ${height}</p>
-                 
+        <%@include file="../includes/menu.jsp" %>
+        
             
     </body>
 </html>

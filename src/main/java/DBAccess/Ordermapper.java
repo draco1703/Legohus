@@ -11,6 +11,7 @@ import java.sql.ResultSet;
 import java.sql.SQLException;
 import java.sql.Statement;
 import java.util.ArrayList;
+import java.util.List;
 
 /**
  *
@@ -34,16 +35,13 @@ public class Ordermapper {
         }
 }
  
-      public static ArrayList<Order> getOrders(int userId) throws OrderException  {
-        ArrayList<Order> orderList = new ArrayList<>();
+      public static List<Order> getOrders(User user) throws OrderException  {
+        List<Order> orderList = new ArrayList<>();
         try {
             Connection con = Connector.connection();
-            String SQL = "SELECT orderlist.id, orderlist.length, orderlist.width, "
-                    + "orderlist.height, orderlist.status FROM useradmin.orderlist"
-                    + " inner join useradmin.users on useradmin.orderlist.user_id = useradmin.users.id "
-                    + "where orderlist.user_id =? order by orderlist.id";
+            String SQL = "SELECT * FROM orderlist where user_id = ?";
             PreparedStatement ps = con.prepareStatement(SQL);
-            ps.setInt(1, userId);
+            ps.setInt(1, user.getId());
             ResultSet rs = ps.executeQuery();
             while (rs.next()) {
                 int id = rs.getInt("id");
@@ -51,7 +49,8 @@ public class Ordermapper {
                 int width = rs.getInt("width");
                 int height = rs.getInt("height");
                 String status = rs.getString("status");
-                Order order = new Order(id, height, length, width, status);
+                int user_id = rs.getInt("user_id");
+                Order order = new Order(id, length, width, height, status, user_id);
                 orderList.add(order);
             }
             return orderList;

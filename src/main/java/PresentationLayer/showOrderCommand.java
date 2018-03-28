@@ -7,21 +7,22 @@ import FunctionLayer.Order;
 import FunctionLayer.OrderException;
 import FunctionLayer.User;
 import java.util.ArrayList;
+import java.util.List;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class RegisterOrder extends Command {
+public class showOrderCommand extends Command {
 
     @Override
     String execute( HttpServletRequest request, HttpServletResponse response ) throws LoginSampleException, OrderException {
-            ArrayList<Order> orderList =  new ArrayList<>();
-            HttpSession session = request.getSession();
-            User user = (User) session.getAttribute("user");
-            int userId = user.getId();
-            orderList = LogicFacade.getOrders(userId);
-            session.setAttribute("orders", orderList);  
-            return "orders";
+        User user = (User) request.getSession().getAttribute("user");
+        List<Order> orders;
+        
+        orders =LogicFacade.getOrders(user);
+        request.setAttribute("orders", orders);
+        
+        return "showOrder";
         }
     }
 

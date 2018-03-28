@@ -15,8 +15,8 @@ public class Calculator extends Command {
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws LoginSampleException {
 
-        int w = Integer.parseInt(request.getParameter("width"));
         int l = Integer.parseInt(request.getParameter("length"));
+        int w = Integer.parseInt(request.getParameter("width"));
         int h = Integer.parseInt(request.getParameter("height"));
 //        request.setAttribute("width", w);
 //        request.setAttribute("length", l);

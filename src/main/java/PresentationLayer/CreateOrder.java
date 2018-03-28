@@ -11,7 +11,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import javax.servlet.http.HttpSession;
 
-public class confirmOrder extends Command{
+public class CreateOrder extends Command{
 
     @Override
     String execute(HttpServletRequest request, HttpServletResponse response) throws  OrderException {
@@ -31,7 +31,7 @@ public class confirmOrder extends Command{
         }catch(OrderException ex){
             throw new OrderException("could not catch");
         }
-        return "confirmOrder";
+        return "customerpage";
     }
     
 }

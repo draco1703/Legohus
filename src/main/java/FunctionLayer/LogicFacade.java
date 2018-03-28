@@ -3,6 +3,7 @@ package FunctionLayer;
 import DBAccess.UserMapper;
 import DBAccess.Ordermapper;
 import java.util.ArrayList;
+import java.util.List;
 
 
 public class LogicFacade {
@@ -17,8 +18,8 @@ public class LogicFacade {
         return user;
     }
     
-      public static ArrayList<Order> getOrders(int userId) throws OrderException {
-        return Ordermapper.getOrders(userId);
+      public static List<Order> getOrders(User user) throws OrderException {
+        return Ordermapper.getOrders(user);
     
       }
       

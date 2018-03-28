@@ -16,9 +16,10 @@ abstract class Command {
         commands.put( "login", new Login() );
         commands.put( "register", new Register() );
         commands.put("calculate_bricks", new Calculator() );
-        commands.put("registerOrder", new RegisterOrder());
-        commands.put("createOrder", new createOrder());
-        commands.put( "confirmorder", new confirmOrder() );
+        commands.put("showOrderCommand", new showOrderCommand());
+        commands.put( "CreateOrder", new CreateOrder() );
+        commands.put( "newOrder", new  NewOrder() );
+
     }
 
     static Command from( HttpServletRequest request ) {

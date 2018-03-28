@@ -8,13 +8,16 @@ public class Order {
     private int length;
     private int height;
     private String status;
+    private int user_id;
 
-    public Order(int id, int width, int length, int height, String status) {
+
+    public Order(int id, int width, int length, int height, String status, int user_id) {
         this.id = id;
         this.width = width;
         this.length = length;
         this.height = height;
         this.status = status;
+        this.user_id = user_id;
     }
      public Order(int width, int length, int height) {
          
@@ -63,9 +66,17 @@ public class Order {
         this.status = status;
     }
 
-    @Override
-    public String toString() {
-        return "Order{" + "id=" + id + ", width=" + width + ", length=" + length + ", height=" + height + ", status=" + status + '}';
+    public int getUser_id() {
+        return user_id;
     }
 
+    public void setUser_id(int user_id) {
+        this.user_id = user_id;
+    }
+
+    @Override
+    public String toString() {
+        return "Order{" + "id=" + id + ", width=" + width + ", length=" + length + ", height=" + height + ", status=" + status + ", user_id=" + user_id + '}';
+    }
+  
 }

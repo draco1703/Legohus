@@ -11,21 +11,10 @@
         <h1>Hello <%=request.getParameter( "email" )%> </h1>
         You are now logged in as a customer of our wonderful site.
         
-        <form name="calculate_bricks" action="FrontController" method="post">
-               <input type="hidden" name="command" value="calculate_bricks">
-            <label>width</label>
-            <input type="text"  name="length" />
-            <label>height</label>
-            <input type="text"   name="width" />
-            <label>length</label>
-            <input type="text"  name="height" />
-            
-            <input type="submit" name="submit" />
+     
+            <a class="button center" href="FrontController?command=newOrder">Klik her får at komme til bestillingssiden</a>
+            <a class="button center" href="FrontController?command=showOrderCommand">Klik her for at komme til dine ordrer</a>
 
-            <br>
-
-            <a href="index.jsp">Click here to go back home</a>
-        </form>
 
         
     </body>
