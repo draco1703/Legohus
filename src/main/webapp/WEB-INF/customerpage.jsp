@@ -10,12 +10,8 @@
     <body>
            <%@include file="../includes/menu_login.jsp" %>
         <h1>Hello <%User user = (User) session.getAttribute("user");
-        out.print(user.getEmail());             %> </h1>
+        out.print(user.getEmail());%> </h1>
         You are now logged in as a customer of our wonderful site.
-        
-     
-            
-
-        
+      
     </body>
 </html>
