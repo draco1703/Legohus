@@ -12,7 +12,9 @@
         <title>JSP Page</title>
     </head>
     <body>
-       
+               <%@include file="../includes/menu_login.jsp" %>
+
+        
          <form name="createOrder" action="FrontController" method="post">
                <input type="hidden" name="command" value="CreateOrder">
             <label>width</label>
@@ -27,7 +29,6 @@
             <br>
 
 
-            <a href="customerpage.jsp">Click here to go back</a>
         </form>
 
         

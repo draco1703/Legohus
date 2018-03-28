@@ -15,7 +15,7 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <%@include file="../includes/menu.jsp" %>
+       <%@include file="../includes/menu_login.jsp" %>
         
            <% 
         List<Order> orders =(List<Order>) request.getAttribute("orders");
